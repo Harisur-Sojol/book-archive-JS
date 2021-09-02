@@ -51,7 +51,7 @@ const displayBook = (books) => {
     //showing book quantities
     const bookQuantity  = displayBooks.childElementCount;
     if(bookQuantity > 0){
-      quantityResult.innerHTML = `<h3 class = "text-primary">About ${bookQuantity} Results Found</h3>`
+      quantityResult.innerHTML = `<h3 class = "text-primary">${bookQuantity} books Found</h3>`
     }
     // error handling
     else if(bookQuantity === 0){
