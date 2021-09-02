@@ -37,7 +37,7 @@ const displayBook = (books) => {
         div.classList.add('col')
         div.innerHTML = `
         <div class="card h-100">
-            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top book-cover" alt="...">
+            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top " alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Book Name: <span class = "">${book.title}</span></h5>
                     <h6 class="card-title text-secondary">Author Name: ${book.author_name}</h6>
