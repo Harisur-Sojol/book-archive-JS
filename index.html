@@ -17,24 +17,25 @@
     </style>
 </head>
 
-<body>
+<body class="">
 
     <div class="container mt-3">
+        <h2 class="text-center bg-dark text-white my-4 w-75 mx-auto p-2">Welcome To Our Book Store</h2>
         <!-- searching section -->
         <div class="input-group mb-3 w-75 mx-auto text-center">
-            <input type="text" class="form-control" id="search-input" placeholder="Search Book"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" id="search-input" placeholder="Search your favourite book"
+                aria-label="" aria-describedby="button-addon2">
             <button onclick="searchBook()" class="btn btn-outline-dark" type="button" id="button-addon2">Button</button>
         </div>
         <!-- error handling -->
         <div id="show-result">
 
         </div>
-        <!-- show book quantity -->
+        <!-- showing book quantity -->
         <div id="book-quantity" class=" my-4 text-center">
 
         </div>
-        <!-- show Booklist -->
+        <!-- showing Booklist -->
         <div id="display-books" class="row row-cols-1 row-cols-md-3 g-4">
 
         </div>

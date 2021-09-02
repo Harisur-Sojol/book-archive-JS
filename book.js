@@ -2,14 +2,16 @@ const searchInput = document.getElementById('search-input');
 const displayBooks = document.getElementById('display-books');
 const errorResult = document.getElementById('show-result')
 const quantityResult = document.getElementById('book-quantity');
+//searching books list
 const searchBook = () => {
     const searchText = searchInput.value;
+    // error handling
     if(searchText.length === 0){
         quantityResult.innerHTML = '';
         errorResult.textContent = '';
         const div = document.createElement('div')
         div.innerHTML = `
-        <h3 class="bg-danger p-4 text-center w-75 mx-auto mt-5">Search field cannot be empty</h3>
+        <h4 class="text-danger p-3 text-center w-75 mx-auto mt-3">Search field cannot be empty</h4>
         `
         errorResult.appendChild(div);
         displayBooks.textContent = ''
@@ -24,6 +26,7 @@ const searchBook = () => {
     }
     
 }
+//Showing book list
 const displayBook = (books) => {
     searchInput.value = '';
     displayBooks.textContent = '';
@@ -36,21 +39,25 @@ const displayBook = (books) => {
         <div class="card h-100">
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top book-cover" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Book Name: ${book.title}</h5>
-                    <h6 class="card-title">Author Name: ${book.author_name ? book.author_name
-                    [0] : 'Unknown Author'}</h6>
-                    <h6 class="card-title">First Publish Year: ${book.first_publish_year ? book.first_publish_year : 'Unknown publish year'}</h6>
-                    <h6 class="card-text">Published By: ${book.publisher}</h6>
+                    <h5 class="card-title">Book Name: <span class = "">${book.title}</span></h5>
+                    <h6 class="card-title text-secondary">Author Name: ${book.author_name}</h6>
+                    <h6 class="card-text">Published By- ${book.publisher}</h6>
+                    <h6 class="card-title">First Publish Year: ${book.first_publish_year}</h6>
                 </div>
         </div>
         `
         displayBooks.appendChild(div);
     })
+    //showing book quantities
     const bookQuantity  = displayBooks.childElementCount;
     if(bookQuantity > 0){
       quantityResult.innerHTML = `<h3 class = "text-primary">About ${bookQuantity} Results Found</h3>`
     }
+    // error handling
     else if(bookQuantity === 0){
-        quantityResult.innerHTML = `<h3> No result found</h3>`
+        quantityResult.innerHTML = `
+        <h3 class = "text-dark "> No result found</h3>
+            <p class = "text-primary">Search a valid book</p>
+        `
     }
 }
